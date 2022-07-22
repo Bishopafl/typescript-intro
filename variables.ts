@@ -4,5 +4,5 @@
  * string, number, boolean, null, undefined
  * 
  */
-let myName = ''; // variable is inferred to string
+let myName: string | null = null; // union types being set on variable
 myName = '4';
