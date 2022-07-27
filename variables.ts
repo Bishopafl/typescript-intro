@@ -17,7 +17,28 @@ let myName: string | null = null; // union types being set on variable
  * let items: string[] | number[] = []; 
  */
 
-let items: [5, 'adam']; 
+// let items: [5, 'adam']; 
+
+/**
+ * Interface:
+ * Allows to create a custom type foreign object
+ * 
+ * Instead of putting the types within the variable, 
+ * we can extract the types to an interface.
+ * 
+ * Most devs use pascal casing for interfaces... 
+ * Some even put a capital 'i' in front to identify interfaces
+ * 
+ * types can even have methods! (line 39) No business logic tho
+ * :39 is set to a 
+ */
+
+interface IAccount {
+    name: string,
+    balance: number,
+    status?: string,
+    deposit?: () => void // optional return type special for functions
+};
 
 /**
  * 
@@ -25,13 +46,9 @@ let items: [5, 'adam'];
  * that can be found within the object
  * 
  * */
-const account: {
-    name: string,
-    balance: number,
-    status?: string,
-} = {
+const account: IAccount = {
     name: 'Adam',
     balance: 10,
 };
 
-let accounts: {}[]; // this tells typescript the variable will store an array of objects
+let accounts: IAccount[]; // this tells typescript the variable will store an array of objects
